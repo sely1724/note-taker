@@ -33,6 +33,7 @@ const getNotes = () =>
     },
   });
 
+// Helper function that accepts a `note` object, sends a POST request and returns the result
 const saveNote = (note) =>
   fetch("/api/notes", {
     method: "POST",
