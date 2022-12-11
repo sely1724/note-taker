@@ -34,11 +34,10 @@ app.use("/api/notes", api);
 // /api/notes POST
 /////////////////////////////////////////////////
 
-app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "/public/index.html"))
-);
 app.get("/notes", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/notes.html"))
 );
-
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/public/assets/index.js"))
+);
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT} 🚀`));
