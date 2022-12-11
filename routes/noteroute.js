@@ -42,10 +42,9 @@ notesRouter.post("/", (req, res) => {
 });
 
 notesRouter.delete("/:id", (req, res) => {
-  const id = req.params.id;
+  let id = req.params.id;
   const filterNotes = db.filter((noteToRemove) => noteToRemove.id !== id);
   writeToFile("./db/db.json", filterNotes);
-  readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
 module.exports = notesRouter;
