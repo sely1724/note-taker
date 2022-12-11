@@ -1,25 +1,7 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text",
-        "id": "test id"
-    },
-    {
-        "title": "Sylvia",
-        "text": "Hi",
-        "id": "bloop"
-    },
-    {
-        "title": "Heyyy",
-        "text": "check"
-    },
-    {
+        "id": "dc3049eb-888f-43e5-88ad-f9ccb70e2d30",
         "title": "asdf",
         "text": "asdf"
-    },
-    {
-        "id": "78eb455e-d94b-4bc5-b236-12f0f810e904",
-        "title": "moose",
-        "text": "moose"
     }
 ]

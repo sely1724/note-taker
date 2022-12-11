@@ -1,12 +1,26 @@
 const notesRouter = require("express").Router();
-const { readFromFile, readAndAppend } = require("../helpers/fsUtils");
+const {
+  readFromFile,
+  readAndAppend,
+  writeToFile,
+} = require("../helpers/fsUtils");
+const db = require("../db/db.json");
 const { v4: uuidv4 } = require("uuid");
 
-const db = require("../db/db.json");
 // GET Route for retrieving all the notes
 notesRouter.get("/", (req, res) => {
   console.info(`${req.method} request received for notes`);
   readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
+});
+
+notesRouter.get("/:id", (req, res) => {
+  console.log("moose!!!");
+  for (let i = 0; i < db.length; i++) {
+    if (db[i] == req.params.id) {
+      return res.json(db[i]);
+    }
+  }
+  res.status(404).send("No notes found.");
 });
 
 // POST Route for a new UX/UI note
@@ -27,15 +41,11 @@ notesRouter.post("/", (req, res) => {
   }
 });
 
-// DELETE Route for note
 notesRouter.delete("/:id", (req, res) => {
-  console.info(`${req.method} request received to delete note`);
-  console.log(req.body);
-  let id = req.params.id;
-  let filteredNotes = db.filter;
-
-  // have to ensure it's singular note.  Pull it up somehow from db json
-  // then have to delete.  account for potential errors.
+  const id = req.params.id;
+  const filterNotes = db.filter((noteToRemove) => noteToRemove.id !== id);
+  writeToFile("./db/db.json", filterNotes);
+  readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
 module.exports = notesRouter;
