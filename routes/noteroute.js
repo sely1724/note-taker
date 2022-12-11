@@ -1,5 +1,6 @@
 const notesRouter = require("express").Router();
 const { readFromFile, readAndAppend } = require("../helpers/fsUtils");
+const { v4: uuidv4 } = require("uuid");
 
 const db = require("../db/db.json");
 // GET Route for retrieving all the notes
@@ -15,6 +16,7 @@ notesRouter.post("/", (req, res) => {
   const { title, text } = req.body;
   if (req.body) {
     const newNote = {
+      id: uuidv4(),
       title,
       text,
     };
