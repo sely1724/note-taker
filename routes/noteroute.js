@@ -8,6 +8,7 @@ notesRouter.get("/", (req, res) => {
   readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
+// POST Route for a new UX/UI note
 notesRouter.post("/", (req, res) => {
   console.info(`${req.method} request received to ADD notes`);
   console.log(req.body);
@@ -24,4 +25,16 @@ notesRouter.post("/", (req, res) => {
   }
 });
 
+// DELETE Route for note
+notesRouter.delete("/", (req, res) => {
+  console.info(`${req.method} request received to delete note`);
+  console.log(req.body);
+  //readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
+
+  // have to ensure it's singular note.  Pull it up somehow from db json
+  // then have to delete.  account for potential errors.
+});
+
 module.exports = notesRouter;
+
+//also why can we view TEST TITLE INFO, but not the rest of the notes???
