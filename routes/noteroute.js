@@ -5,7 +5,7 @@ const {
   writeToFile,
 } = require("../helpers/fsUtils");
 const db = require("../db/db.json");
-// classmate recommended: https://github.com/uuidjs/uuid
+// classmate recommended installing. found website to guide: https://www.geeksforgeeks.org/node-js-npm-uuid/
 const { v4: uuidv4 } = require("uuid");
 
 // GET Route for retrieving all the notes
