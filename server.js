@@ -34,10 +34,13 @@ app.use("/api/notes", api);
 // /api/notes POST
 /////////////////////////////////////////////////
 
+// sendFile sends file to browser
 app.get("/notes", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/notes.html"))
 );
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/public/assets/index.js"))
+
+// * required instead of / per homework instructions.  Placing below /notes and changing from index.html and index.js was way I could figure it out.
+app.get("/*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/public/index.html"))
 );
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT} 🚀`));

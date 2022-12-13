@@ -5,6 +5,7 @@ const {
   writeToFile,
 } = require("../helpers/fsUtils");
 const db = require("../db/db.json");
+// classmate recommended: https://github.com/uuidjs/uuid
 const { v4: uuidv4 } = require("uuid");
 
 // GET Route for retrieving all the notes
@@ -13,13 +14,13 @@ notesRouter.get("/", (req, res) => {
   readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
-notesRouter.get("/:id", (req, res) => {
-  console.log("moose!!!");
+notesRouter.get("/api/notes/:id", (req, res) => {
   for (let i = 0; i < db.length; i++) {
     if (db[i] == req.params.id) {
       return res.json(db[i]);
     }
   }
+
   res.status(404).send("No notes found.");
 });
 
@@ -41,12 +42,29 @@ notesRouter.post("/", (req, res) => {
   }
 });
 
+// FROM CLASS ACTIVITY
+
+// // GET route for returning all terms from a given category
+// app.get('/api/terms/:category', (req, res) => {
+//   const requestedCategory = req.params.category.toLowerCase();
+//   const result = [];
+
+//   for (let i = 0; i < termData.length; i++) {
+//     const currentTermCategory = termData[i].category;
+//     if (requestedCategory === currentTermCategory) {
+//       result.push(termData[i]);
+//     }
+//   }
+//   return res.json(result);
+// });
+
 notesRouter.delete("/:id", (req, res) => {
-  let id = req.params.id;
-  const filterNotes = db.filter((noteToRemove) => noteToRemove.id !== id);
+  let noteDeleteId = req.params.id;
+  let filterNotes = db.filter((notesToKeep) => notesToKeep.id !== noteDeleteId);
+  //should override what's already there with just filtered notes
   writeToFile("./db/db.json", filterNotes);
+  //should print what was just overwritten
+  readFromFile("./db/db.json").then((data) => res.json(data));
 });
 
 module.exports = notesRouter;
-
-//also why can we view TEST TITLE INFO, but not the rest of the notes???
