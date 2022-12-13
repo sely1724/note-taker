@@ -1,6 +1,7 @@
+// require external modules that exist in separate files
 const express = require("express");
-
 const notesRouter = require("./notesRouter");
+
 const app = express();
 
 app.use("/notes", notesRouter);

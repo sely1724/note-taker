@@ -1,3 +1,4 @@
+// require external modules that exist in separate files
 const notesRouter = require("express").Router();
 const {
   readFromFile,
@@ -26,13 +27,14 @@ notesRouter.post("/", (req, res) => {
       title,
       text,
     };
+    // readAndAppend is function declared in fsUtils (based on class activity)
     readAndAppend(newNote, "./db/db.json");
     res.json(`Note added successfully`);
   } else {
     res.error("error adding note");
   }
 });
-
+// Delete route for single note
 notesRouter.delete("/:id", (req, res) => {
   let noteDeleteId = req.params.id;
   readFromFile("./db/db.json")
