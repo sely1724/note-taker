@@ -9,23 +9,13 @@ const db = require("../db/db.json");
 const { v4: uuidv4 } = require("uuid");
 
 // GET Route for retrieving all the notes
-notesRouter.get("/", (req, res) => {
+notesRouter.get("/api/notes", (req, res) => {
   console.info(`${req.method} request received for notes`);
-  readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
-});
-
-notesRouter.get("/api/notes/:id", (req, res) => {
-  for (let i = 0; i < db.length; i++) {
-    if (db[i] == req.params.id) {
-      return res.json(db[i]);
-    }
-  }
-
-  res.status(404).send("No notes found.");
+  readFromFile("./db/db.json").then((err, data) => res.json(JSON.parse(data)));
 });
 
 // POST Route for a new UX/UI note
-notesRouter.post("/", (req, res) => {
+notesRouter.post("/api/notes", (req, res) => {
   console.info(`${req.method} request received to ADD notes`);
   console.log(req.body);
   const { title, text } = req.body;
@@ -58,13 +48,13 @@ notesRouter.post("/", (req, res) => {
 //   return res.json(result);
 // });
 
-notesRouter.delete("/:id", (req, res) => {
-  let noteDeleteId = req.params.id;
-  let filterNotes = db.filter((notesToKeep) => notesToKeep.id !== noteDeleteId);
-  //should override what's already there with just filtered notes
-  writeToFile("./db/db.json", filterNotes);
-  //should print what was just overwritten
-  readFromFile("./db/db.json").then((data) => res.json(data));
-});
+// notesRouter.delete("/:id", (req, res) => {
+//   let noteDeleteId = req.params.id;
+//   let filterNotes = db.filter((notesToKeep) => notesToKeep.id !== noteDeleteId);
+//   //should override what's already there with just filtered notes
+//   writeToFile("./db/db.json", filterNotes);
+//   //should print what was just overwritten
+//   readFromFile("./db/db.json").then((data) => res.json(data));
+// });
 
 module.exports = notesRouter;
