@@ -5,7 +5,7 @@ const fs = require("fs");
 
 const app = express();
 //including the module in routes/noteroute.js
-const api = require("./routes/noteRouter");
+const api = require("./routes/index.js");
 const PORT = process.env.PORT || 3001;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ app.use(express.json());
 
 // // tells express app that EVERY route created in the noterouter.js will have an api prefix.
 // //could create an index.js under routes to combine all routes.  But since we just have notes, should be ok with adding /notes
-app.use("/api/notes", api);
+app.use("/api", api);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -32,7 +32,7 @@ app.use("/api/notes", api);
 app.get("/notes", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/notes.html"))
 );
-// * required instead of / per homework instructions.  Placing below /notes and changing from index.html and index.js was way I could figure it out.
+// * required instead of / per homework instructions.  Placing below /notes
 // tried adding /* but it became default.  And when I bumped app.get notes.html to bottom, couldn't get past first page
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/index.html"))
