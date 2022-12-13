@@ -26,14 +26,6 @@ app.use("/api/notes", api);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////
-// This takes all the routes exported by the api module and prepends their path with "/api"
-// /notes GET
-// /notes POST
-// /api/notes GET
-// /api/notes POST
-/////////////////////////////////////////////////
-
 // sendFile sends file to browser
 app.get("/notes", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/notes.html"))

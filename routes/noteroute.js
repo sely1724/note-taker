@@ -50,11 +50,21 @@ notesRouter.post("/", (req, res) => {
 //   return res.json(result);
 // });
 
-// notesRouter.delete("/:id", (req, res) => {
-//   let noteDeleteId = req.params.id;
-//   let filterNotes = db.filter((notesToKeep) => notesToKeep.id !== noteDeleteId);
-//   //should override what's already there with just filtered notes
-//   writeToFile("./db/db.json", filterNotes);
+notesRouter.delete("/:id", (req, res) => {
+  let noteDeleteId = req.params.id;
+  readFromFile("./db/db.json")
+    .then((data) => JSON.parse(data))
+    .then((db) => {
+      let filterNotes = db.filter(
+        (notesToKeep) => notesToKeep.id !== noteDeleteId
+      );
+      writeToFile("./db/db.json", filterNotes);
+      res.json(`deleted!`);
+    });
+});
+
+//should override what's already there with just filtered notes
+//
 //   //should print what was just overwritten
 //   readFromFile("./db/db.json").then((data) => res.json(data));
 // });
