@@ -34,14 +34,13 @@ app.use("/api/notes", api);
 // /api/notes POST
 /////////////////////////////////////////////////
 
-// * required instead of / per homework instructions.  Placing below /notes and changing from index.html and index.js was way I could figure it out.
-// tried adding /* but it became default.  And when I bumped app.get notes.html to bottom, couldn't get past first page
-app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "/public/index.html"))
-);
-
 // sendFile sends file to browser
 app.get("/notes", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/notes.html"))
+);
+// * required instead of / per homework instructions.  Placing below /notes and changing from index.html and index.js was way I could figure it out.
+// tried adding /* but it became default.  And when I bumped app.get notes.html to bottom, couldn't get past first page
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/public/index.html"))
 );
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT} 🚀`));

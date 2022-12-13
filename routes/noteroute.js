@@ -9,13 +9,15 @@ const db = require("../db/db.json");
 const { v4: uuidv4 } = require("uuid");
 
 // GET Route for retrieving all the notes
-notesRouter.get("/api/notes", (req, res) => {
+notesRouter.get("/", (req, res) => {
   console.info(`${req.method} request received for notes`);
-  readFromFile("./db/db.json").then((err, data) => res.json(JSON.parse(data)));
+  readFromFile("./db/db.json").then((data) => {
+    res.json(JSON.parse(data));
+  });
 });
 
 // POST Route for a new UX/UI note
-notesRouter.post("/api/notes", (req, res) => {
+notesRouter.post("/", (req, res) => {
   console.info(`${req.method} request received to ADD notes`);
   console.log(req.body);
   const { title, text } = req.body;
