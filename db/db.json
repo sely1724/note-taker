@@ -1,27 +1,22 @@
 [
     {
-        "id": "cd5fcfb9-27d4-4fbc-a00c-7e1477342f5f",
-        "title": "Howdy",
-        "text": "Pardner"
+        "id": "dca47f90-0c24-4c62-b23f-46adade03a85",
+        "title": "Trader Joe's List",
+        "text": "- Shallots\n- Cumin\n- Peanut Butter\n- Limes\n- Brown Rice \n- Cha Siu Bao\n- Dunkers"
     },
     {
-        "id": "6ea5b3bf-0779-4e81-91bf-4fe87fa29561",
-        "title": "Wake up ",
-        "text": "wake up!!"
+        "id": "3b745574-2fef-4606-95f1-a7f002699413",
+        "title": "Zioncheck Rules",
+        "text": "Round 1: 2 sets (6)\nRound 2: 1 run 1 set (7)\nRound 3: 2 runs (8)\nRound 4: 3 sets (9)\nRound 5: 1 run 2 sets (10)\nRound 6: 2 runs 1 set (11)\nRound 7: 3 runs (12)\nRound 8: 2 runs 2 sets (14 must use draw card)\n\nSets = 3 of a kind (diff suits)\nRuns = 4 in a row (same suit) \n\nAces = high or low\nJokers = wild\n\nPoints \n2-9 = 5pts\n10-K = 10pts \nA = 15pts\nJoker = 50pts"
     },
     {
-        "id": "7e735984-878d-4447-815d-3d207b3717b2",
-        "title": "Write queries",
-        "text": "do it!"
+        "id": "3c5841b1-14b5-4669-9018-33a6635b3e68",
+        "title": "Soup Recipes",
+        "text": "Soup\n- https://www.tasteofhome.com/collection/contest-winning-soup-recipes/\n- https://www.tasteofhome.com/recipes/slow-cooker-sweet-potato-chocolate-mole-soup/\n- https://www.foodandwine.com/recipes/beef-stew-in-red-wine-sauce - for a relaxing no hw Sunday <3\n- https://www.tasteofhome.com/recipes/cream-of-lentil-soup/\n- https://minimalistbaker.com/1-pot-tuscan-style-beef-lentil-soup/\n- https://www.halfbakedharvest.com/creamy-white-bean-noodle-soup/\n- https://www.marthastewart.com/1050446/gigante-beans-feta-and-bitter-greens\n- https://alexandracooks.com/2015/01/15/slow-cooker-gigante-beans-tomatoes-pancetta/\n- https://alexandracooks.com/2021/04/05/split-pea-and-ham-or-not-soup/\n- https://alexandracooks.com/2017/07/19/five-ingredient-corn-soup-herb-salsa/\n- https://alexandracooks.com/2018/12/03/saffron-carrot-soup-with-toasted-almond-dukkah/\n- https://alexandracooks.com/2014/10/21/butternut-squash-and-cider-soup-served-with-rosemary-and-sage-flatbread/\n- https://www.farmfreshtoyou.com/recipes/428/white-bean-soup-with-meyer-lemon\n\n\n\n\n\n"
     },
     {
-        "id": "a1e2833f-b94c-4285-996b-7c57f398d3bd",
-        "title": "asdf",
-        "text": "asd"
-    },
-    {
-        "id": "155f99bd-f568-44f5-8d97-ade9371b23f9",
-        "title": "sdf",
-        "text": "dssdf"
+        "id": "5c94377f-4b2f-4804-8f5c-bdc2651b6d98",
+        "title": "Customer Reactivations",
+        "text": "\n1. Identify the breweries we want to use as targets 1 week in advance <— Sylvia to write query to sort breweries by count of deactivated users desc. \n2. Post to redash.  publish.\n3. Megan OH <— run query for reactivated customers.\n4. Go to Excel to ensure we only target unique customers.  Don’t want to send 3 different emails to a single user.\n5. Construct and send email\n"
     }
 ]
