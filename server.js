@@ -4,7 +4,7 @@ const fs = require("fs");
 
 const app = express();
 //including the module in routes/noteroute.js
-const api = require("./routes/noteroute");
+const api = require("./routes/noteRouter");
 const PORT = process.env.PORT || 3001;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
