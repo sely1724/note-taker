@@ -1,67 +1,59 @@
 # note-taker
 
-## Getting Started
+![MIT](https://img.shields.io/badge/license-MIT-green)
 
-- `DELETE /api/notes/:id` should receive a query parameter that contains the id of a note to delete. To delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+## Table of Contents
 
-## Grading Requirements
+- [Link-To-Website](#link-to-website)
+- [Description](#description)
+- [Installation](#installation)
+- [Screenshots](#screenshots)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> - A repository that has no code
->
-> - A repository that includes a unique name but nothing else
->
-> - A repository that includes only a README file but nothing else
->
-> - A repository that only includes starter code
+## Link To Website
 
-This Challenge is graded based on the following criteria:
+[Link]()
 
-### Technical Acceptance Criteria: 40%
+## Description
 
-- Satisfies all of the preceding acceptance criteria plus the following:
+This application, with the main user being a small business owner, provides an easy way for users to write and save notes. It makes organizing thoughts and keeping track of to-dos extremely easy so they can spend time focusing on more pressing issues. Users even have the ability to delete their notes so when the task has been accomplished, they don't have to see it anymore. Basically this app does wonders for users' productivity
 
-  - Application front end must connect to an Express.js back end.
+## Installation
 
-  - Application back end must store notes that have a unique id in a JSON file.
+Clone the GitHub repository (git@github.com:sely1724/note-taker.git). Go to your integrated terminal and run using the command “node index.js”.
 
-  - Application must be deployed to Heroku.
+Once cloned, run these steps in your terminal.
 
-### Deployment: 36%
+1. npm init
+2. npm i express
 
-- Application deployed at live URL.
+Then to run the program enter node server.js into the command line.
 
-- Application loads with no errors.
+## Screenshots
 
-- Application GitHub URL submitted.
+<img src= "./public/assets/screenshots/screenshot1.png"/>
+<img src = "./public/assets/screenshots/screenshot2.png"/>
 
-- GitHub repository contains application code.
+## License
 
-### Application Quality: 11%
+License used for this project: [MIT LICENSE](https://opensource.org/licenses/MIT)
+Please refer to the license section of my REPO if additional information is needed
 
-- Application console is free of errors.
+## Contributing
 
-### Repository Quality: 13%
+n/a
 
-- Repository has a unique name.
+## Testing
 
-- Repository follows best practices for file structure and naming conventions.
+n/a
 
-- Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+## Questions
 
-- Repository contains multiple descriptive commit messages.
+Questions? Feel free to get in touch:
 
-- Repository contains quality README file with description, screenshot, and link to deployed application.
+GitHub: https://github.com/sely1724
 
-### Bonus: +10 Points
-
-- Application allows users to delete notes.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-- The URL of the functional, deployed application.
-
-- The URL of the GitHub repository, with a unique name and a README describing the project.
+Email: sylvianne9417@gmail.com
